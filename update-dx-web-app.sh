@@ -7,4 +7,5 @@ git pull
 cd ../maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 
+cd ../dx-web-app/
 mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging
