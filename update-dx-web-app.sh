@@ -8,4 +8,4 @@ cd ../maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 
 cd ../dx-web-app/
-mvn clean deploy --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging
+/home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging
