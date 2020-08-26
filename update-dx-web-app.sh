@@ -49,7 +49,7 @@ for i in "$@"; do
   fi
 
   if [ "$project_name" != "" ]; then
-        # 远程传输
+        # 远程传输,删除服务器端对应的升级包
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
 cd /www/webapp/"$project_name"/work/
 rm -rf *.war
@@ -59,13 +59,10 @@ eeooff
 
     scp /home/dx_write/project/dx-web-app/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
 
-    # 远程传输
+    # 构建远程服务，重启tomcat
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
-pid=$(ps -ef | grep "$tomcat_name" | grep -v grep | awk '{print $2}')
-echo $pid
-kill -9 $pid
-cd /www/"$tomcat_name"/bin/
-sh start.sh
+cd /www/webapp/
+sh dxrestart.sh "$tomcat_name" "$project_name"
 exit
 eeooff
     echo done!
