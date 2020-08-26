@@ -1,0 +1,7 @@
+        <distributionManagement>
+            <repository>
+                <id>internal-nexus-snapshots</id>
+                <name>internal nexus snapshots</name>
+                <url>http://nexus.1001dx.com/repository/maven-snapshots/</url>
+            </repository>
+        </distributionManagement>

@@ -1,10 +1,10 @@
-echo 'cd ../dx-web-app/'
+echo 'checkout $0'
 cd ../dx-web-app/
-
-echo 'git pull'
+git checkout .
+git checkout "$0"
 git pull
 
-cd shell/dx-web-app
+cd ../maven-dx-shell/
+sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 
-echo 'mvn deploy install --settings ~/.m2/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging'
-mvn clean deploy --settings ~/.m2/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging
+mvn clean deploy -P env_staging --settings ~/.m2/settings-new-work.xml -Dmaven.test.skip=true -T6 -Penv_staging
