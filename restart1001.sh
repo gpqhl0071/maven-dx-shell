@@ -40,7 +40,11 @@ exit
 eeooff
   echo done!
 
-  scp /home/dx_write/project/"$local_project_name"/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
+  if [ "$local_project_name" == "dx-web" ]; then
+    scp /home/dx_write/project/"$local_project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
+  else
+    scp /home/dx_write/project/"$local_project_name"/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
+  fi
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
