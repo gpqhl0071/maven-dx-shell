@@ -8,9 +8,6 @@ elif [ "$2" == "" ]; then
   exit 1
 fi
 
-if
-
-
 # 更新分支代码
 echo 'checkout $1'
 cd ../dx-web-app/
