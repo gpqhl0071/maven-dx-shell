@@ -49,6 +49,14 @@ for i in "$@"; do
   fi
 
   if [ "$project_name" != "" ]; then
+        # 远程传输
+    ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
+cd /www/webapp/"$project_name"/work/
+rm -rf *.war
+exit
+eeooff
+    echo done!
+
     scp /home/dx_write/project/dx-web-app/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
 
     # 远程传输
