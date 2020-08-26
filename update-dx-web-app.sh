@@ -1,8 +1,24 @@
 #!/bin/sh
 
+if [ "$1" == "" ]; then
+  echo branch is null
+  exit 1
+elif [ "$2" == "" ]; then
+  echo project_name is null
+  exit 1
+fi
+
+if
+
+
 # 更新分支代码
 echo 'checkout $1'
 cd ../dx-web-app/
+git checkout .
+git checkout "$1"
+git pull
+
+cd ../dx-web/
 git checkout .
 git checkout "$1"
 git pull
@@ -11,8 +27,14 @@ git pull
 cd ../maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 
+cd ../maven-dx-shell/
+sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
+
 # 构建项目
 cd ../dx-web-app/
+/home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
+
+cd ../dx-web/
 /home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
 
 for i in "$@"; do
@@ -21,6 +43,7 @@ for i in "$@"; do
   project_name=""
   tomcat_name=""
   ip="192.168.15.31"
+  local_project_name="dx-web-app"
 
   if [ $i == "dx-aps" ]; then
     echo "dx-aps"
@@ -44,12 +67,13 @@ for i in "$@"; do
     project_name="dx-web"
     tomcat_name="tomcatdx"
     ip="192.168.15.32"
+    local_project_name="dx-web"
   else
     echo "没有符合的条件"
   fi
 
   if [ "$project_name" != "" ]; then
-        # 远程传输,删除服务器端对应的升级包
+    # 远程传输,删除服务器端对应的升级包
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
 cd /www/webapp/"$project_name"/work/
 rm -rf *.war
@@ -57,7 +81,7 @@ exit
 eeooff
     echo done!
 
-    scp /home/dx_write/project/dx-web-app/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
+    scp /home/dx_write/project/"$local_project_name"/"$project_name"/target/*.war dx@"$ip":/www/webapp/"$project_name"/work/
 
     # 构建远程服务，重启tomcat
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
