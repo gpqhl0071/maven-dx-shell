@@ -63,7 +63,8 @@ eeooff
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
 unzip -o /www/webapp/"$project_name"/work/*.war
 cd /www/webapp/
-sh dxrestart.sh "$tomcat_name" "$project_name"
+sh stop.sh "$tomcat_name"
+sh dxrestart.sh "$tomcat_name"
 exit
 eeooff
     echo done!
