@@ -61,6 +61,7 @@ eeooff
 
     # 构建远程服务，重启tomcat
     ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
+unzip -o /www/webapp/"$project_name"/work/*.war
 cd /www/webapp/
 sh dxrestart.sh "$tomcat_name" "$project_name"
 exit
