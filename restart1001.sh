@@ -11,7 +11,7 @@ if [ $i == "dx-aps" ]; then
 elif [ $i == "dx-autotask" ]; then
   echo "dx-autotask"
   project_name="dx-autotask"
-  tomcat_name="tomcatautotask"
+  tomcat_name="tomcatauto"
 elif [ $i == "dx-dm" ]; then
   echo "dx-dm"
   project_name="dx-dm"
