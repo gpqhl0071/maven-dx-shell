@@ -23,20 +23,20 @@ git checkout "$1"
 git pull
 
 # 写入deploy相关配置
-cd ${root_path}/maven-dx-shell/
+cd "${root_path}"/maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 
-cd ${root_path}/maven-dx-shell/
+cd "${root_path}"/maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 
 # 构建项目
-cd ${root_path}/dx-web-app/
+cd "${root_path}"/dx-web-app/
 /home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
 
-cd ${root_path}/dx-web/
+cd "${root_path}"/dx-web/
 /home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
 
-cd ${root_path}/maven-dx-shell/
+cd "${root_path}"/maven-dx-shell/
 for i in "$@"; do
   sh restart1001.sh "$i"
 done
