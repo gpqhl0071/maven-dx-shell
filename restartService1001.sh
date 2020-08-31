@@ -31,7 +31,7 @@ exit
 eeooff
   echo done!
 
-  scp /home/dx_write/project/"$local_project_name"/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/work/
+  scp /home/dx_write/project/"$local_project_name"/"${project_name}"/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/work/
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
