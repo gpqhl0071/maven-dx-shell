@@ -30,8 +30,8 @@ cd "${root_path}"/maven-dx-shell/
 sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 
 # 构建项目
-#cd "${root_path}"/dx-web-app/
-#/home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
+cd "${root_path}"/dx-web-app/
+/home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
 
 sh dx_web_package.sh
 
