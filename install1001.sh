@@ -32,8 +32,8 @@ sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 clean_and_install.sh
 
 # 构建项目
-#cd "${root_path}"/dx-web-app/
-#clean_and_install
+cd "${root_path}"/dx-web-app/
+clean_and_install
 
 cd "${root_path}"/dx-web/
 clean_and_install
