@@ -37,18 +37,21 @@ fi
 if [ "$project_name" != "" ]; then
   # 远程传输,删除服务器端对应的升级包
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
-cd /www/webapp/"$project_name"/work/
+cd /www/webapp/"$project_name"/
 rm -rf *.tar.gz
 exit
 eeooff
   echo done!
 
-  scp /home/dx_write/project/"$local_project_name"/"${local_project_name_1}"/${local_project_name_2}/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/work/
+  scp /home/dx_write/project/"$local_project_name"/"${local_project_name_1}"/${local_project_name_2}/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
-cd /www/webapp/"$project_name"/work/
-tar -zxvf /www/webapp/"$project_name"/work/*.tar.gz
+cd /www/webapp/"$project_name"/
+tar -zxvf /www/webapp/"$project_name"/*.tar.gz
+file_name=$(ls *.tar.gz)
+file_name_d=${file_name%.tar.gz}
+cp file_name_d/* work/
 cd /www/webapp/"$project_name"/work/bin
 sh restart.sh
 exit
