@@ -52,6 +52,9 @@ tar -zxvf /www/webapp/"$project_name"/*.tar.gz
 file_name=$(ls *.tar.gz)
 file_name_d=${file_name%-assembly.tar.gz}
 
+cd /www/webapp/"$project_name"/"${file_name_d}"/
+zip -r dx.zip *
+
 cd /www/webapp/"$project_name"/work/bin
 sh restart.sh
 exit
