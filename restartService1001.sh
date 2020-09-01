@@ -48,12 +48,7 @@ eeooff
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
 cd /www/webapp/"$project_name"/
-tar -zxvf /www/webapp/"$project_name"/*.tar.gz
-file_name=$(ls *.tar.gz)
-file_name_d=${file_name%-assembly.tar.gz}
-
-cd /www/webapp/"$project_name"/"${file_name_d}"/
-zip -r dx.zip *
+sh installServer.sh
 
 cd /www/webapp/"$project_name"/work/bin
 sh restart.sh
