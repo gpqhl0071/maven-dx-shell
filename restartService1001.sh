@@ -51,8 +51,7 @@ cd /www/webapp/"$project_name"/
 tar -zxvf /www/webapp/"$project_name"/*.tar.gz
 file_name=$(ls *.tar.gz)
 file_name_d=${file_name%-assembly.tar.gz}
-rm -rf work/bin work/conf/ work/lib/
-cp -r /www/webapp/"$project_name"/"$file_name_d"/* /www/webapp/"$project_name"/work/
+
 cd /www/webapp/"$project_name"/work/bin
 sh restart.sh
 exit
