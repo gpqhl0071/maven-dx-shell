@@ -1,6 +1,8 @@
 cd /www/wap/
 
 pm2 stop 0
-npm install
+if [ "$1" == "Y" ]; then
+  npm install
+fi
 pm2 start 0
 
