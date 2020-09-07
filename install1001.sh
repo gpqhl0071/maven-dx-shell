@@ -19,6 +19,7 @@ git checkout .
 git checkout "${branch_name}"
 git pull
 
+echo 'checkout ${branch_name}'
 cd ../dx-web/
 git checkout .
 git checkout "${branch_name}"
