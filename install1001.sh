@@ -13,11 +13,11 @@ fi
 branch_name="$1"
 
 # 更新分支代码
-echo "checkout ${branch_name}"
-cd ../dx-web-app/
-git checkout .
-git checkout "${branch_name}"
-git pull
+#echo "checkout ${branch_name}"
+#cd ../dx-web-app/
+#git checkout .
+#git checkout "${branch_name}"
+#git pull
 
 echo "checkout ${branch_name}"
 cd ../dx-web/
