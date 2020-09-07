@@ -19,11 +19,17 @@ git checkout .
 git checkout "${branch_name}"
 git pull
 
-echo "checkout ${branch_name}"
-cd ../dx-web/
-git checkout .
-git checkout "${branch_name}"
-git pull
+
+for i in "$@"; do
+  if [ "$i" == "dx-web" ]; then
+    echo "checkout ${branch_name}"
+    cd ../dx-web/
+    git checkout .
+    git checkout "${branch_name}"
+    git pull
+  fi
+done
+
 
 # 写入deploy相关配置
 cd "${root_path}"/maven-dx-shell/
