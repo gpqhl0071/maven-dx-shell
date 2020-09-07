@@ -10,16 +10,18 @@ elif [ "$2" == "" ]; then
   exit 1
 fi
 
+branch_name=$1
+
 # 更新分支代码
-echo 'checkout $1'
+echo 'checkout $branch_name'
 cd ../dx-web-app/
 git checkout .
-git checkout "$1"
+git checkout "$branch_name"
 git pull
 
 cd ../dx-web/
 git checkout .
-git checkout "$1"
+git checkout "$branch_name"
 git pull
 
 # 写入deploy相关配置
