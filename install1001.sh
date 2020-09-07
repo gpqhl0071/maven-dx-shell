@@ -10,7 +10,7 @@ elif [ "$2" == "" ]; then
   exit 1
 fi
 
-branch_name=$1
+branch_name="$1"
 
 # 更新分支代码
 echo 'checkout $branch_name'
