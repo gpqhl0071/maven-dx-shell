@@ -9,4 +9,7 @@ mv dx.zip ../work
 
 cd ../work
 
+path_name=$(pwd)
+rm -rf ${path_name}/lib
+
 unzip -o dx.zip
