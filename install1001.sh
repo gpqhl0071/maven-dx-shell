@@ -16,12 +16,12 @@ branch_name="$1"
 echo 'checkout $branch_name'
 cd ../dx-web-app/
 git checkout .
-git checkout "$branch_name"
+git checkout "${branch_name}"
 git pull
 
 cd ../dx-web/
 git checkout .
-git checkout "$branch_name"
+git checkout "${branch_name}"
 git pull
 
 # 写入deploy相关配置
