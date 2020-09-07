@@ -11,25 +11,29 @@ elif [ "$2" == "" ]; then
 fi
 
 branch_name="$1"
-
-# 更新分支代码
-echo "checkout ${branch_name}"
-cd ../dx-web-app/
-git checkout .
-git checkout "${branch_name}"
-git pull
-
-
+is_dx_web="0"
 for i in "$@"; do
   if [ "$i" == "dx-web" ]; then
-    echo "checkout ${branch_name}"
-    cd ../dx-web/
-    git checkout .
-    git checkout "${branch_name}"
-    git pull
+    is_dx_web="1"
   fi
 done
 
+# 更新分支代码
+if [ ${is_dx_web} == "0" ]; then
+  echo "checkout ${branch_name}"
+  cd ../dx-web-app/
+  git checkout .
+  git checkout "${branch_name}"
+  git pull
+fi
+
+if [ ${is_dx_web} == "1" ]; then
+  echo "checkout ${branch_name}"
+  cd ../dx-web/
+  git checkout .
+  git checkout "${branch_name}"
+  git pull
+fi
 
 # 写入deploy相关配置
 cd "${root_path}"/maven-dx-shell/
