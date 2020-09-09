@@ -40,16 +40,21 @@ if [ ${is_dx_web} == "0" ]; then
   cd "${root_path}"/maven-dx-shell/
   sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 fi
+
 if [ ${is_dx_web} == "1" ]; then
   cd "${root_path}"/maven-dx-shell/
   sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 fi
 
-# 构建项目
-cd "${root_path}"/dx-web-app/
-/home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
+if [ ${is_dx_web} == "0" ]; then
+  # 构建项目
+  cd "${root_path}"/dx-web-app/
+  /home/dx_write/apache-maven-3.6.3/bin/mvn clean deploy -P env_staging --settings /usr/share/maven/conf/settings-new-work.xml -Dmaven.test.skip=true -T6
+fi
 
-sh "${root_path}"/maven-dx-shell/dx_web_package.sh
+if [ ${is_dx_web} == "1" ]; then
+  sh "${root_path}"/maven-dx-shell/dx_web_package.sh
+fi
 
 cd "${root_path}"/maven-dx-shell/
 for i in "$@"; do
