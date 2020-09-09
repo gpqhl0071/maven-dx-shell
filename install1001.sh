@@ -40,7 +40,7 @@ if [ ${is_dx_web} == "0" ]; then
   cd "${root_path}"/maven-dx-shell/
   sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
 fi
-if [ ${is_dx_web} == "0" ]; then
+if [ ${is_dx_web} == "1" ]; then
   cd "${root_path}"/maven-dx-shell/
   sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 fi
