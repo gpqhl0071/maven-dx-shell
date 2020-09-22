@@ -48,8 +48,8 @@ eeooff
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
-cd /www/webapp/"${project_name}"/work/WEB-INF/lib/
-rm -rf *.jar
+cd /www/webapp/"${project_name}"/work/
+rm -rf WEB-INF
 cd /www/webapp/"${project_name}"/work/
 unzip -o /www/webapp/"${project_name}"/work/*.war
 cd /www/webapp/
