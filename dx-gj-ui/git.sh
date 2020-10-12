@@ -1,4 +1,5 @@
 cd /www/project/dx-gj-ui/
+git checkout "$2"
 git pull
 
 cd /www/project/dx-gj-ui/wap/
