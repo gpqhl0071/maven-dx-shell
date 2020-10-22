@@ -59,5 +59,5 @@ fi
 
 cd "${root_path}"/maven-dx-shell/
 for i in "$@"; do
-  sh restart1001.sh "$i"
+  sh restart1001dx.sh "$i"
 done

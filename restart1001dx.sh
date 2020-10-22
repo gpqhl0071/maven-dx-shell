@@ -17,7 +17,6 @@ elif [ $i == "dx-dm" ]; then
   echo "dx-dm"
   project_name="dx-dm"
   tomcat_name="tomcatadmin"
-  ip="192.168.15.32"
 elif [ $i == "dx-agent" ]; then
   echo "dx-agent"
   project_name="dx-agent"
@@ -26,7 +25,6 @@ elif [ $i == "dx-web" ]; then
   echo "dx-web"
   project_name="dx-web"
   tomcat_name="tomcatdx"
-  ip="192.168.15.32"
   local_project_name="dx-web"
 else
   echo "没有符合的条件"
