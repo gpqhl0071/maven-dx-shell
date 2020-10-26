@@ -11,11 +11,11 @@ if [ $i == "dx-public-service" ]; then
   project_name="dx-public-service"
   local_project_name_1="dx-public"
   local_project_name_2="dx-public-api-service"
-elif [ $i == "dx-ctivity-service" ]; then
-  echo "dx-ctivity-service"
-  project_name="dx-ctivity-service"
-  local_project_name_1="dx-ctivity"
-  local_project_name_2="dx-ctivity-api-service"
+elif [ $i == "dx-activity-service" ]; then
+  echo "dx-activity-service"
+  project_name="dx-activity-service"
+  local_project_name_1="dx-activity"
+  local_project_name_2="dx-activity-api-service"
 elif [ $i == "dx-strategy-service" ]; then
   echo "dx-strategy-service"
   project_name="dx-strategy-service"
