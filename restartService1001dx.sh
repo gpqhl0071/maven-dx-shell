@@ -52,7 +52,7 @@ eeooff
 cd /www/webapp/service/"$project_name"/
 sh installServerdx.sh
 
-cd /www/webapp/service/"$project_name"/work/bin
+cd /www/webapp/service/"$project_name"/bin
 sh restart.sh
 exit
 eeooff
