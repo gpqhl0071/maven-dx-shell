@@ -38,7 +38,7 @@ fi
 if [ "$project_name" != "" ]; then
   # 远程传输,删除服务器端对应的升级包
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
-cd /www/webapp/"$project_name"/
+cd /www/webapp/service/"$project_name"/
 rm -rf *.tar.gz
 exit
 eeooff
