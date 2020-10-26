@@ -44,6 +44,7 @@ exit
 eeooff
   echo done!
 
+  echo scp /home/dx_write/project/gs/"$local_project_name"/"${local_project_name_1}"/${local_project_name_2}/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/
   scp /home/dx_write/project/gs/"$local_project_name"/"${local_project_name_1}"/${local_project_name_2}/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/
 
   # 构建远程服务，重启tomcat
