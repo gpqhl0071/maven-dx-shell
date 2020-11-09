@@ -43,6 +43,14 @@ exit
 eeooff
   echo done!
 
+    # 构建远程服务，重启tomcat
+  ssh dx@"192.168.15.31" >/dev/null 2>&1 <<eeooff
+cd /www/webapp/1001bin/
+python3 restartNotice.py "大象国际，开始重启微服务：${local_project_name_1}"
+exit
+eeooff
+  echo done!
+
   scp /home/dx_write/project/"$local_project_name"/"${local_project_name_1}"/${local_project_name_2}/target/*.tar.gz dx@"$ip":/www/webapp/"$project_name"/
 
   # 构建远程服务，重启tomcat
