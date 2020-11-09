@@ -49,7 +49,7 @@ eeooff
   # 构建远程服务，重启tomcat
   ssh dx@"192.168.15.31" >/dev/null 2>&1 <<eeooff
 cd /www/webapp/1001bin/
-python3 restartNotice.py "大象国际，开始重启服务：" + ${tomcat_name}
+python3 restartNotice.py "大象国际，开始重启服务：${tomcat_name}"
 exit
 eeooff
   echo done!
