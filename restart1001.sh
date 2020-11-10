@@ -46,13 +46,7 @@ eeooff
     scp /home/dx_write/project/"$local_project_name"/"${project_name}"/target/*.war dx@"$ip":/www/webapp/"${project_name}"/work/
   fi
 
-  # 构建远程服务，重启tomcat
-  ssh dx@"192.168.15.31" >/dev/null 2>&1 <<eeooff
-cd /www/webapp/1001bin/
-python3 restartNotice.py "大象国际，开始重启服务：${tomcat_name}"
-exit
-eeooff
-  echo done!
+  sh notice.sh "大象国际 ：【${project_name}】，正在重启服务..."
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
