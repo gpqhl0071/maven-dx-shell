@@ -1,4 +1,6 @@
 
+mv /home/dx_write/repository/com/redhorse/dx-common/6.2.0-SNAPSHOT/ /home/dx_write/repository/com/redhorse/dx-common/6.2.0-SNAPSHOT_$(date +%Y%m%d_%H%M%S_%N)
+
 sh notice.sh "公社 ：【后端服务接口】，正在部署重启服务..."
 
 cd /home/dx_write/project/gs/dx-aps-h5/
