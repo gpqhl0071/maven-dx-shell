@@ -15,4 +15,5 @@ mv dx-aps-h5-6.2.0-SNAPSHOT.jar dx-aps-h5.jar
 
 sh restart.sh
 
+sh notice.sh "公社 ：【后端服务接口】，完成部署。"
 echo "success"
