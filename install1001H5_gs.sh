@@ -7,6 +7,8 @@ cd target/
 
 cp dx-aps-h5-6.2.0-SNAPSHOT.jar /home/dx_write/dx-aps-h5/
 
+cd /home/dx_write/dx-aps-h5/
+
 mv dx-aps-h5-6.2.0-SNAPSHOT.jar dx-aps-h5.jar
 
 sh restart.sh
