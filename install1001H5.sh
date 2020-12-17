@@ -3,7 +3,7 @@ branch_name="$1"
 
 mv /home/dx_write/repository/com/redhorse/dx-common/${branch_name}/ /home/dx_write/repository/com/redhorse/dx-common/${branch_name}_$(date +%Y%m%d_%H%M%S_%N)
 
-sh notice.sh "国际H5 ：【后端服务接口】，正在部署重启服务..."
+sh notice.sh "国际H5-" + ${branch_name} + " ：【后端服务接口】，正在部署重启服务..."
 
 cd /home/dx_write/project/dx-aps-h5/
 
@@ -21,7 +21,7 @@ cd /home/dx_write/dx-aps-h5-1001co/
 
 mv dx-aps-h5-${branch_name}.jar dx-aps-h5-1001co.jar
 
-sh notice.sh "国际H5 ：【后端服务接口】，完成部署。"
+sh notice.sh "国际H5-" + ${branch_name} + "  ：【后端服务接口】，完成部署。"
 
 sh restart.sh
 echo "success"
