@@ -21,7 +21,7 @@ cd /home/dx_write/dx-aps-h5-1001co/
 
 mv dx-aps-h5-${branch_name}.jar dx-aps-h5-1001co.jar
 
-sh notice.sh "国际H5-" + ${branch_name} + "  ：【后端服务接口】，完成部署。"
+sh /home/dx_write/project/maven-dx-shell/notice.sh "国际H5-" + ${branch_name} + "  ：【后端服务接口】，完成部署。"
 
 sh restart.sh
 echo "success"
