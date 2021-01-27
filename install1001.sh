@@ -46,6 +46,7 @@ if [ ${is_dx_web} == "1" ]; then
   sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
 fi
 
+echo "$3"
 if [ "$3" == "yes" ]; then
 
   if [ ${is_dx_web} == "0" ]; then
