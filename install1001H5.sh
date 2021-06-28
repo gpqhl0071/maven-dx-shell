@@ -10,7 +10,7 @@ cd /home/dx_write/project/dx-aps-h5/
 
 git pull
 
-git checkout feature-${version}
+git checkout feature/${version}
 
 git pull
 
