@@ -8,6 +8,8 @@ sh notice.sh "国际H5【${version}】【后端服务接口】，正在部署重
 
 cd /home/dx_write/project/dx-aps-h5/
 
+git pull
+
 git checkout feature-${version}
 
 git pull
