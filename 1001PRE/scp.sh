@@ -1,14 +1,14 @@
-target_jar="/Users/penggao/Desktop/dx-common-7.3.0-SNAPSHOT.jar"
-
-# app1
-scp $target_jar dx@8.210.178.211:/www/webapp/dx-web/WEB-INF/lib/
-scp $target_jar dx@8.210.178.211:/www/webapp/dx-dm/WEB-INF/lib/
-# app2
-scp $target_jar dx@47.242.177.183:/www/webapp/dx-web/WEB-INF/lib/
-scp $target_jar dx@47.242.177.183:/www/webapp/dx-aps/WEB-INF/lib/
-# app3
-scp $target_jar dx@47.242.206.47:/www/webapp/dx-autotask/WEB-INF/lib/
-scp $target_jar dx@47.242.206.47:/www/webapp/dx-aps/WEB-INF/lib/
+#target_jar="/Users/penggao/Desktop/dx-common-7.3.0-SNAPSHOT.jar"
+#
+## app1
+#scp $target_jar dx@8.210.178.211:/www/webapp/dx-web/WEB-INF/lib/
+#scp $target_jar dx@8.210.178.211:/www/webapp/dx-dm/WEB-INF/lib/
+## app2
+#scp $target_jar dx@47.242.177.183:/www/webapp/dx-web/WEB-INF/lib/
+#scp $target_jar dx@47.242.177.183:/www/webapp/dx-aps/WEB-INF/lib/
+## app3
+#scp $target_jar dx@47.242.206.47:/www/webapp/dx-autotask/WEB-INF/lib/
+#scp $target_jar dx@47.242.206.47:/www/webapp/dx-aps/WEB-INF/lib/
 
 
   # 构建远程服务，重启tomcat
