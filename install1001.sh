@@ -35,6 +35,8 @@ if [ ${is_dx_web} == "1" ]; then
   git pull
 fi
 
+sleep 5s
+
 if [ ${is_dx_web} == "0" ]; then
   # 写入deploy相关配置
   cd "${root_path}"/maven-dx-shell/
