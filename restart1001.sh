@@ -1,4 +1,5 @@
 i="$1"
+version="$2"
 project_name=""
 tomcat_name=""
 ip="192.168.15.31"
@@ -46,7 +47,7 @@ eeooff
     scp /home/dx_write/project/"$local_project_name"/"${project_name}"/target/*.war dx@"$ip":/www/webapp/"${project_name}"/work/
   fi
 
-  sh notice.sh "大象国际 ：【${project_name}】，正在重启服务..."
+  sh notice.sh "大象国际 ：【${project_name}】【${version}】，正在重启服务..."
 
   # 构建远程服务，重启tomcat
   ssh dx@"$ip" >/dev/null 2>&1 <<eeooff
