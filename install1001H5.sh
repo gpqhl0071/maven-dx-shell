@@ -1,10 +1,11 @@
 #!/bin/sh
 version="$1"
 remark="$2"
+JENKINS_USER_NAME="$3"
 
 mv /home/dx_write/repository/com/redhorse/dx-common/feature-${version}/ /home/dx_write/repository/com/redhorse/dx-common/feature-${version}_$(date +%Y%m%d_%H%M%S_%N)
 
-sh notice.sh "国际H5【${version}】【后端服务接口】，正在部署重启服务...部署内容【${remark}】"
+sh notice.sh "国际H5【${version}】【后端服务接口】，【${JENKINS_USER_NAME}】正在部署重启服务...部署内容【${remark}】"
 
 cd /home/dx_write/project/dx-aps-h5/
 
