@@ -37,16 +37,16 @@ fi
 
 sleep 5s
 
-if [ ${is_dx_web} == "0" ]; then
-  # 写入deploy相关配置
-  cd "${root_path}"/maven-dx-shell/
-  sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
-fi
-
-if [ ${is_dx_web} == "1" ]; then
-  cd "${root_path}"/maven-dx-shell/
-  sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
-fi
+#if [ ${is_dx_web} == "0" ]; then
+#  # 写入deploy相关配置
+#  cd "${root_path}"/maven-dx-shell/
+#  sed -i '/<\/build>/r deploy.xml' ../dx-web-app/pom.xml
+#fi
+#
+#if [ ${is_dx_web} == "1" ]; then
+#  cd "${root_path}"/maven-dx-shell/
+#  sed -i '/<\/build>/r deploy.xml' ../dx-web/pom.xml
+#fi
 
 echo "$3"
 if [ "$3" == "yes" ]; then

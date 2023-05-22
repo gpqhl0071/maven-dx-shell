@@ -18,8 +18,8 @@ git checkout "$1"
 git pull
 
 # 写入deploy相关配置
-cd "${root_path}"/maven-dx-shell/
-sed -i '/<\/build>/r deploy.xml' ../dx-service/pom.xml
+#cd "${root_path}"/maven-dx-shell/
+#sed -i '/<\/build>/r deploy.xml' ../dx-service/pom.xml
 
 # 构建项目
 cd "${root_path}"/dx-service/

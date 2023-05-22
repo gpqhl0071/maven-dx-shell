@@ -19,7 +19,7 @@
         <repository>
             <id>internal-nexus-snapshots</id>
             <name>internal nexus snapshots</name>
-            <url>http://nexus.1001dx.com/repository/maven-snapshots/</url>
+            <url>http://nexus.1001dx.com/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 </project>
